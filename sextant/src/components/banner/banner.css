@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center;
     animation-name: move-up;
-    animation-duration: 3.5s;
+    animation-duration: 2.5s;
     border-radius: 0px 0px 40px 40px;
     font-size: 38px;
     color: #ca61c3;
@@ -17,7 +17,7 @@
     border-radius: 20px;
     
     height: 100%;
-    animation-duration: 3.5s;
+    animation-duration: 2.5s;
     animation-name: move-text;
     display: flex;
     align-items: center;
@@ -25,18 +25,24 @@
 }
 
 #trademark-symbol {
-    font-size: 15px;
+    font-size: 10px;
+    animation-name: move-symbol;
+    animation-duration: 2.5s;
 }
 
 @keyframes move-up {
     /* 0% {margin-top: 200px; height: 50%; border-radius: 20px;} */
     0% {height: 8%;}
-    80% {height: 55%; font-size: 260px; color: white; }
+    90% {height: 55%; font-size: 260px; color: white; }
     100% {height: 8%;}
 }
 
 @keyframes move-text {
     0% {width: 15%}
-    80% {border-radius: 100px;}
+    90% {border-radius: 100px;}
     100% {width: 15%}
+}
+
+@keyframes move-symbol {
+    90% {font-size: 30px;}
 }
