@@ -4,10 +4,15 @@
 }
 
 .exhibit-area {
-  background-color: #ca61c3;
+  /* background-color: #ca61c3; */
   height: 100%;
   animation-name: glide-exhibit;
   animation-duration: 7s;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  align-items: center;
+  margin-top: 50px;
 }
 
 @keyframes glide-exhibit {

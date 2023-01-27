@@ -1,21 +1,32 @@
-import React, { Component, useEffect } from 'react';
-import './ipAddress.css';
+import React, { Component, useEffect, useState } from 'react';
+import './ipAddress.cpp';
 
-class FindAddress extends Component {
+class IPAddress extends Component {
     render() {
-        let result = "";
-        if(this.props.ip_service === "ipv4") {
-            result = "this is ipv4 service API";
-            fetch('https://api64.ipify.org')
-            .then(response => response.json())
-            .then(data => console.log(data));
-        } else if(this.props.ip_service === "ipv6") {
-            result = "this is ipv6 service API";
+        const type_of_request = this.props.title;
+        function Something() {
+            const [word, setWord] = useState("");
+            let url = "";
+            useEffect(() => {
+                if(type_of_request === "ipv4") {
+                    url = 'https://api.ipify.org?format=json';
+                } else if(type_of_request === "ipv6") {
+                    url = 'https://api64.ipify.org?format=json';
+                }
+                fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    setWord(data.ip);
+                })
+            }, []);
+            return(
+                <div>{word}</div>
+            );
         }
         return(
-            <div>{result}</div>
+            <Something></Something>
         );
     }
 }
 
-export default FindAddress;
+export default IPAddress;
