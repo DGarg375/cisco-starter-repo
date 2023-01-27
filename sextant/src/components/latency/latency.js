@@ -12,8 +12,7 @@ class Latency extends Component {
                 console.log('WebSocket Client Connected');
             }
             client.onmessage = (message) => {
-                setFigure((Date.now() - message.data)*(-1));
-                console.log(Date.now() - message.data);
+                setFigure(message.data - Date.now());
             }
             return(
                 <div>{figure} ms</div>
